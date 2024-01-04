@@ -45,7 +45,7 @@ em {
 }
 .start button {
     height: 10vh;
-    width: 20%;
+    width: 25%;
     background-color: #808080;
 }
 .start button:hover {
@@ -59,10 +59,20 @@ em {
     background-color: red;
     width: 100%;
     height: 15vh;
+    padding-top: 50px;
+    background-color: #808080;
+    border: 2px solid black;
 }
 .contacts a {
-    margin-left: 400px;
+    margin-left: 200px;
     padding: 40px;
-    
-    
+    text-decoration: none;
+    font-size: 32px;
+    color: black;
+}
+#one:hover {
+    color: #bcbcbc;
+}
+#two:hover {
+    color: #bcbcbc;
 }
