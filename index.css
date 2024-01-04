@@ -46,10 +46,10 @@ em {
 .start button {
     height: 10vh;
     width: 25%;
-    background-color: #808080;
+    background-color: #bcbcbc;
 }
 .start button:hover {
-    background-color: #bcbcbc;
+    background-color: #808080;
     cursor: pointer;
 }
 .contacts {
