@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #bcbcbc;
+    overflow: hidden;
+}
+.rules {
+    border: 1px solid black;
+    width: 20%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+.rules li {
+    font-size: 24px;
+}
+.welcome {
+    position: fixed;
+    top: 0%;
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+    background-color: #808080 ;
+    margin-top: 0%;
+}
+.welcome h2 {
+    font-size: 32px;
+}
+em {
+    font-weight: bold;
+}
+.start {
+    width: 80%;
+    height: 40vh;
+    background-color: #808080 ;
+    position: fixed;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.start button {
+    height: 10vh;
+    width: 20%;
+    background-color: #808080;
+}
+.start button:hover {
+    background-color: #bcbcbc;
+    cursor: pointer;
+}
+.contacts {
+    position: fixed;
+    top: 85%;
+    left: 0%;
+    background-color: red;
+    width: 100%;
+    height: 15vh;
+}
