@@ -15,7 +15,7 @@
             <br>
             <br>
             <label for="gold">Gold: </label>
-            <input type="number" id="gold" placeholder="How many(0-1000)" max="1000" required>
+            <input type="number" id="gold" placeholder="How many(0-1000)" max="1000" required min="0">
             <br>
             <br>    
             <label for="continent">Which Continent: </label>
@@ -23,12 +23,12 @@
                 <option value="Africa">Africa</option>
                 <option value="South America">South America</option>
                 <option value="North America">North America</option>
-                <option value="Asia" selected>Asia</option>
+                <option value="Asia">Asia</option>
                 <option value="Europe">Europe</option>
                 <option value="Antartica">Antartica</option>
                 <option value="Australia">Australia</option>
             </select>
-            <button id="Form" onclick="location.href='index.html'">Submit!</button>
+            <button id="Form" onclick="getFormValue()">Submit!</button>
         </form>
 
     </div>
