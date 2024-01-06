@@ -1,12 +1,13 @@
 body {
     background-color: #808080;
+    overflow: hidden;
 }
 .counters {
     border: 1px solid black;
     width: 20%;
     height: 40%;
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 0%;
     justify-content: center;
     align-items: center;
@@ -45,4 +46,77 @@ body {
     font-size: 60px;
     position: absolute;
     top: 0%;
+}
+.mainThings {
+    width: 40%;
+    height: 40vh;
+    background-color: #bcbcbc;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    border-radius: 10px;
+}
+.mainThings label {
+    font-size: 40px;
+}
+.mainThings button {
+    background-color: #808080;
+    border-radius: 10px;
+}
+.mainThings #counterPlus {
+    background-color: #808080;
+    border-radius: 10px;
+}
+.gold {
+    background-color: #bcbcbc;
+    width: 25%;
+    height: 20vh;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#flag {
+    width: 10%;
+    height: auto;
+}
+#gold {
+    width: 10%;
+    height: auto;
+}
+.countryName #flag {
+    position: absolute;
+    top: 1%;
+    left: 15%;
+}
+.goal {
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    width: 100%;
+    height: 10%;
+    background-color: #bcbcbc;
+    text-align: center;
+}
+.income {
+    width: 25%;
+    height: 50vh;
+    background-color: #bcbcbc;
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    display: flex;
+    justify-content: center;
+}
+.income button {
+    background-color: #808080;
+}
+.income #roulette {
+    background-color: #808080;
 }

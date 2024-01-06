@@ -5,12 +5,23 @@ let school = 0;
 let university = 0;
 let medicalSchool = 0;
 
+let gold = 100;
+
+let goldHtml = document.getElementById("goldHtml");
+
+
+let maxLevelReached = false;
+let houseAlertShown = false;
+let factoryAlertShown = false;
+let hospitalAlertShown = false;
+let schoolAlertShown = false;
+let universityAlertShown = false;
+let medicalSchoolAlertShown = false;
+
 function setChange(event) {
 
     event.preventDefault();
-
     
-
     let houseChange = document.getElementById("house");
     let factoryChange = document.getElementById("factory");
     let hospitalChange = document.getElementById("hospital");
@@ -22,16 +33,28 @@ function setChange(event) {
 
     if (selectedProperty === "house") {
         house += 1;
+        gold -= 5;
+        goldHtml.innerHTML = "Gold: " + gold;   
     } else if (selectedProperty === "factory") {
         factory += 1;
+        gold -= 30;
+        goldHtml.innerHTML = "Gold: " + gold;
     } else if (selectedProperty === "hospital") {
         hospital += 1;
+        gold -= 25;
+        goldHtml.innerHTML = "Gold: " + gold;
     } else if (selectedProperty === "school") {
         school += 1;
+        gold -= 10;
+        goldHtml.innerHTML = "Gold: " + gold;
     } else if (selectedProperty === "university") {
         university += 1;
+        gold -= 20;
+        goldHtml.innerHTML = "Gold: " + gold;
     } else if (selectedProperty === "medicalSchool") {
         medicalSchool += 1;
+        gold -= 25;
+        goldHtml.innerHTML = "Gold: " + gold;
     }
 
     houseChange.innerHTML = "House: " + house;
@@ -40,4 +63,68 @@ function setChange(event) {
     schoolChange.innerHTML = "School: " + school;
     universityChange.innerHTML = "University: " + university;
     medicalSchoolChange.innerHTML = "Medical School: " + medicalSchool;
+
+    if (gold < 0) {
+        alert("You are not a good president \n You lose")
+        window.location.href = "index.html";
+    }
+
+    
+
+
+if (house >= 10 && factory >= 10 && hospital >= 10 && school >= 10 && university >= 10 && medicalSchool >= 10) {
+  alert("Congratulations! You have reached the maximum level for all properties.");
+  maxLevelReached = true;
+}
+
+if (house == 10 && !houseAlertShown) {
+  alert("Congrats you completed Houses \n you don't need to construct House anymore");
+  houseAlertShown = true;
+}
+
+if (factory == 10 && !factoryAlertShown) {
+  alert("Congrats you completed Factories \n you don't need to construct Factory anymore");
+  factoryAlertShown = true;
+}
+
+if (hospital == 10 && !hospitalAlertShown) {
+  alert("Congrats you completed Hospitals \n you don't need to construct Hospital anymore");
+  hospitalAlertShown = true;
+}
+
+if (school == 10 && !schoolAlertShown) {
+  alert("Congrats you completed Schools \n you don't need to construct School anymore");
+  schoolAlertShown = true;
+}
+
+if (university == 10 && !universityAlertShown) {
+  alert("Congrats you completed Universities \n you don't need to construct University anymore");
+  universityAlertShown = true;
+}
+
+if (medicalSchool == 10 && !medicalSchoolAlertShown) {
+  alert("Congrats you completed Medical Schools \n you don't need to construct Medical School anymore");
+  medicalSchoolAlertShown = true;
+}
+    
+}
+function goldIncrease() {
+    gold += 10;
+    goldHtml.innerHTML = "Gold: " + gold;
+    
+}
+setInterval(goldIncrease,10000);
+
+function bet() {
+    let userGuess = document.getElementById("roulette").value;
+    let randomNumber = Math.floor(Math.random() * 9)+1;
+
+    if (userGuess == randomNumber){
+        alert("You win")
+    }else {
+        alert("You lose")
+    }
+    console.log(randomNumber);
+
+    
 }
