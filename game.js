@@ -198,8 +198,21 @@ function adsasd() {
   let firstIndex = teams[randomNumber];
   let secondIndex = teams[anotherRandomNumber]
   
-  let arrayTeam = [firstIndex,secondIndex]
-  let  whoWin = arrayTeam[randomNumberWin]
+  let  whoWin = ;
+
+
+
+  firstTeam.value = firstIndex;
+  secondTeam.value = secondIndex;
+
+  firstTeam.innerHTML = firstIndex;
+  secondTeam.innerHTML = secondIndex;
+
+
+  console.log(firstIndex);
+  console.log(secondIndex);
+  console.log(whoWin);
+  console.log(userGuess);
 
   if (whoWin == firstIndex && userGuess == firstIndex) {
     winningTeam.innerHTML = "You" + win;
@@ -216,13 +229,4 @@ function adsasd() {
     goldHtml.innerHTML = "Gold: " + gold;
   }
 
-
-
-  firstTeam.innerHTML = firstIndex;
-  secondTeam.innerHTML = secondIndex;
-
-
-  console.log(firstIndex);
-  console.log(secondIndex);
 }
-adsasd();
