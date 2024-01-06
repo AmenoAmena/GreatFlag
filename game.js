@@ -132,4 +132,12 @@ function bet() {
       winState.innerHTML = "You: " + lose
       }
     goldHtml.innerHTML = "Gold: " + gold;
+    if (gold < 0) {
+      alert("You are not a good president \n You lose")
+      window.location.href = "index.html";
+  }
+}
+if (gold < 0) {
+  alert("You are not a good president \n You lose")
+  window.location.href = "index.html";
 }

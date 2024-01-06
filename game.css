@@ -126,3 +126,6 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.income label {
+    font-size: 32px;
+}
