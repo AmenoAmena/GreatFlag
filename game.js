@@ -188,7 +188,9 @@ function teamBet() {
   let randomNumber = Math.floor(Math.random() * 12);
   let anotherRandomNumber = Math.floor(Math.random() * 12);
   let lastRandomNumber = Math.floor(Math.random() * 12);
-  let randomNumberWin = Math.flooe(Math.random()*2)+1;
+  let randomNumberWin = Math.floor(Math.random()*2)+1;
+
+  let userGuess = document.getElementById("teamBet").value;
 
   if (randomNumber == anotherRandomNumber) {
     anotherRandomNumber == lastRandomNumber;
@@ -199,6 +201,21 @@ function teamBet() {
   let arrayTeam = [firstIndex,secondIndex]
   let  whoWin = arrayTeam[randomNumberWin]
 
+  if (whoWin == firstIndex && userGuess == firstIndex) {
+    winningTeam.innerHTML = "You" + win;
+    gold += 40;
+    goldHtml.innerHTML = "Gold: " + gold;
+  
+  }else if (whoWin == secondIndex && userGuess == secondIndex) {
+    winningTeam.innerHTML = "You: " + win;
+    gold += 40;
+    goldHtml.innerHTML = "Gold: " + gold;
+  }else {
+    winningTeam.innerHTML = "You: " + lose;
+    gold -= 20;
+    goldHtml.innerHTML = "Gold: " + gold;
+  }
+
 
 
   firstTeam.innerHTML = firstIndex;
@@ -208,4 +225,3 @@ function teamBet() {
   console.log(firstIndex);
   console.log(secondIndex);
 }
-teamBet();  
