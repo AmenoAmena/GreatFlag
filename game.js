@@ -8,7 +8,7 @@ let medicalSchool = 0;
 let gold = 100;
 
 let goldHtml = document.getElementById("goldHtml");
-
+let winState = document.getElementById("winState");
 
 let maxLevelReached = false;
 let houseAlertShown = false;
@@ -17,6 +17,11 @@ let hospitalAlertShown = false;
 let schoolAlertShown = false;
 let universityAlertShown = false;
 let medicalSchoolAlertShown = false;
+
+
+let win = "win";
+
+let lose = "lose";
 
 function setChange(event) {
 
@@ -117,14 +122,14 @@ setInterval(goldIncrease,10000);
 
 function bet() {
     let userGuess = document.getElementById("roulette").value;
-    let randomNumber = Math.floor(Math.random() * 9)+1;
+    let randomNumber = Math.floor(Math.random() * 4)+1;
 
     if (userGuess == randomNumber){
-        alert("You win")
+        gold += 40;
+        winState.innerHTML = "You: " + win
     }else {
-        alert("You lose")
-    }
-    console.log(randomNumber);
-
-    
+        gold -= 20;
+      winState.innerHTML = "You: " + lose
+      }
+    goldHtml.innerHTML = "Gold: " + gold;
 }
