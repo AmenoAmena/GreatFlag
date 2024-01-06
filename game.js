@@ -79,45 +79,63 @@ function setChange(event) {
 
 if (house >= 10 && factory >= 10 && hospital >= 10 && school >= 10 && university >= 10 && medicalSchool >= 10) {
   alert("Congratulations! You have reached the maximum level for all properties.");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   maxLevelReached = true;
 }
 
 if (house == 10 && !houseAlertShown) {
   alert("Congrats you completed Houses \n you don't need to construct House anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   houseAlertShown = true;
 }
 
 if (factory == 10 && !factoryAlertShown) {
   alert("Congrats you completed Factories \n you don't need to construct Factory anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   factoryAlertShown = true;
 }
 
 if (hospital == 10 && !hospitalAlertShown) {
   alert("Congrats you completed Hospitals \n you don't need to construct Hospital anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   hospitalAlertShown = true;
 }
 
 if (school == 10 && !schoolAlertShown) {
   alert("Congrats you completed Schools \n you don't need to construct School anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   schoolAlertShown = true;
 }
 
 if (university == 10 && !universityAlertShown) {
   alert("Congrats you completed Universities \n you don't need to construct University anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   universityAlertShown = true;
 }
 
 if (medicalSchool == 10 && !medicalSchoolAlertShown) {
   alert("Congrats you completed Medical Schools \n you don't need to construct Medical School anymore");
+  gold += 20;
+  goldHtml.innerHTML = "Gold: " + gold;
   medicalSchoolAlertShown = true;
 }
     
 }
+
+
 function goldIncrease() {
     gold += 10;
     goldHtml.innerHTML = "Gold: " + gold;
     
 }
+
+
 setInterval(goldIncrease,10000);
 
 function bet() {
@@ -137,6 +155,8 @@ function bet() {
       window.location.href = "index.html";
   }
 }
+
+
 if (gold < 0) {
   alert("You are not a good president \n You lose")
   window.location.href = "index.html";
