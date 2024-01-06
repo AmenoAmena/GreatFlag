@@ -5,10 +5,32 @@ let school = 0;
 let university = 0;
 let medicalSchool = 0;
 
+
+var teams = [
+  "Apex Aces",
+  "Titan Tigers",
+  "Quantum Quest",
+  "Zenith Zephyrs",
+  "Vanguard Vipers",
+  "Nebula Nomads",
+  "Ember Enigma",
+  "Sonic Storm",
+  "Celestial Sirens",
+  "Pinnacle Panthers",
+  "Mirage Monarchs",
+  "Solar Sirens",
+];
+
+
+
 let gold = 100;
 
 let goldHtml = document.getElementById("goldHtml");
 let winState = document.getElementById("winState");
+let firstTeam = document.getElementById("firstTeam");
+let secondTeam = document.getElementById("secondTeam");
+let winningTeam = document.getElementById("teamBetWins");
+
 
 let maxLevelReached = false;
 let houseAlertShown = false;
@@ -161,3 +183,29 @@ if (gold < 0) {
   alert("You are not a good president \n You lose")
   window.location.href = "index.html";
 }
+
+function teamBet() {
+  let randomNumber = Math.floor(Math.random() * 12);
+  let anotherRandomNumber = Math.floor(Math.random() * 12);
+  let lastRandomNumber = Math.floor(Math.random() * 12);
+  let randomNumberWin = Math.flooe(Math.random()*2)+1;
+
+  if (randomNumber == anotherRandomNumber) {
+    anotherRandomNumber == lastRandomNumber;
+  }
+  let firstIndex = teams[randomNumber];
+  let secondIndex = teams[anotherRandomNumber]
+  
+  let arrayTeam = [firstIndex,secondIndex]
+  let  whoWin = arrayTeam[randomNumberWin]
+
+
+
+  firstTeam.innerHTML = firstIndex;
+  secondTeam.innerHTML = secondIndex;
+
+
+  console.log(firstIndex);
+  console.log(secondIndex);
+}
+teamBet();  

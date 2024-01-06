@@ -57,6 +57,10 @@ body {
     transform: translate(-50%,-50%);
     padding: 15px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .mainThings label {
     font-size: 40px;
@@ -128,4 +132,22 @@ body {
 }
 .income label {
     font-size: 32px;
+}
+#teamBet {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    background-color: #808080;
+}
+#teamBetButton {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    background-color: #808080;
+}
+#teamBetId {
+    position: absolute;
+    top: 40%;
 }

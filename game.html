@@ -13,7 +13,6 @@
     </div>
     <div class="countryName">
         <h1>Valoria</h1>
-        <img src="flag.jpg" alt="Valoria_flag" id="flag">
     </div>
     <div class="quit">
         <a href="index.html">Resignation</a>
@@ -60,8 +59,13 @@
         </form>
         <h2 id="winState">You: </h2>
         <form>
-            
+            <select name="teamBet" id="teamBet">
+                <option value="firstTeam" id="firstTeam"></option>
+                <option value="secondTeam" id="secondTeam"></option>
+            </select>
+            <button type="button" onclick="teamBet()" id="teamBetButton">Wins</button>
         </form>
+        <h2 id="teamBetWins">You: </h2>
     </div>
     <script src="game.js"></script>
     
