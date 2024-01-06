@@ -184,7 +184,7 @@ if (gold < 0) {
   window.location.href = "index.html";
 }
 
-function teamBet() {
+function adsasd() {
   let randomNumber = Math.floor(Math.random() * 12);
   let anotherRandomNumber = Math.floor(Math.random() * 12);
   let lastRandomNumber = Math.floor(Math.random() * 12);
@@ -225,3 +225,4 @@ function teamBet() {
   console.log(firstIndex);
   console.log(secondIndex);
 }
+adsasd();
