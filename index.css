@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color: #bcbcbc;
     overflow: hidden;
+    display: flex;
 }
 .rules {
     border: 1px solid black;
