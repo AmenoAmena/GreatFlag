@@ -37,6 +37,8 @@ body {
 }
 .quit:hover {
     background-color: red;
+}
+.quit a:hover {
     cursor: pointer;
 }
 .countryName h1 {
