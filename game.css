@@ -1,0 +1,40 @@
+body {
+    background-color: #808080;
+}
+.counters {
+    border: 1px solid black;
+    width: 20%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background-color: #cbcbcb;
+}
+.counters li {
+    font-size: 24px;
+}
+.quit {
+    border: 1px solid black;
+    height: 20vh;
+    width: 20%;
+    background-color: #cbcbcb;
+    position: absolute;
+    top: 0%;
+    left: 80%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.quit a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
+.quit:hover {
+    background-color: red;
+    cursor: pointer;
+}
