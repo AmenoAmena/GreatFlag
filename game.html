@@ -6,9 +6,9 @@
     <title>GreatFlag</title>
     <link rel="stylesheet" href="game.css">
 </head>
-<body>
+<body onload="startStopwatch()">
     <div class="gold">
-        <h2 id="goldHtml">Gold: 100</h2>
+        <h2 id="goldHtml">Gold: 200</h2>
         <img src="gold.png" alt="Gold_icon" id="gold">
     </div>
     <div class="countryName">
@@ -29,9 +29,13 @@
             <li id="medicalSchool">Medical School: 0</li>
         </ol>
     </div>
+    <div class="clock">
+        <h1>Timer</h1>
+        <p id="display">0:00:00.000</p>
+    </div>
     <div class="mainThings">
         <form>
-            <label for="counterPlus">Which do you want to construct: </label>
+            <label for="counterPlus">Which one do you want to construct: </label>
             <select name="counterPlus" id="counterPlus">
                 <option value="house">House(5)</option>
                 <option value="factory">Factory(30)</option>
@@ -40,11 +44,11 @@
                 <option value="university">University(20)</option>
                 <option value="medicalSchool">Medical School(25)</option>
             </select>
-            <button onclick="setChange(event)">Construct</button>
+            <button onclick="setChange(event)" type="button">Construct</button>
         </form>
     </div>
     <div class="goal">
-        <h1>To complete the game you have to make 10 of each property</h1>
+        <h1>To complete the game you have to make 5 of each property</h1>
     </div>
     <div class="income">
         <form>
@@ -58,14 +62,6 @@
             <button onclick="bet()" type="button">Submit</button>
         </form>
         <h2 id="winState">You: </h2>
-        <form>
-            <select name="teamBet" id="teamBet">
-                <option value="firstTeam" id="firstTeam"></option>
-                <option value="secondTeam" id="secondTeam"></option>
-            </select>
-            <button type="button" onclick="adsasd()" id="teamBetButton">Wins</button>
-        </form>
-        <h2 id="teamBetWins">You: </h2>
     </div>
     <script src="game.js"></script>
     

@@ -65,7 +65,7 @@ em {
     border: 2px solid black;
 }
 .contacts a {
-    margin-left: 200px;
+    margin-left: 100px;
     padding: 40px;
     text-decoration: none;
     font-size: 32px;
@@ -75,5 +75,8 @@ em {
     color: #bcbcbc;
 }
 #two:hover {
+    color: #bcbcbc;
+}
+a:hover {
     color: #bcbcbc;
 }

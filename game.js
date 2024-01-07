@@ -6,6 +6,9 @@ let university = 0;
 let medicalSchool = 0;
 
 
+let clockRunning = true;
+
+
 var teams = [
   "Apex Aces",
   "Titan Tigers",
@@ -23,13 +26,14 @@ var teams = [
 
 
 
-let gold = 100;
+let gold = 200;
 
 let goldHtml = document.getElementById("goldHtml");
 let winState = document.getElementById("winState");
 let firstTeam = document.getElementById("firstTeam");
 let secondTeam = document.getElementById("secondTeam");
 let winningTeam = document.getElementById("teamBetWins");
+let counterPlus = document.getElementById("counterPlus");
 
 
 let maxLevelReached = false;
@@ -44,6 +48,7 @@ let medicalSchoolAlertShown = false;
 let win = "win";
 
 let lose = "lose";
+
 
 function setChange(event) {
 
@@ -99,51 +104,48 @@ function setChange(event) {
     
 
 
-if (house >= 10 && factory >= 10 && hospital >= 10 && school >= 10 && university >= 10 && medicalSchool >= 10) {
-  alert("Congratulations! You have reached the maximum level for all properties.");
+if (house >= 5 && factory >= 5 && hospital >= 5 && school >= 5 && university >= 5 && medicalSchool >= 5) {
+  alert(`Congratulations! You have reached the maximum level for all properties`);
   gold += 20;
   goldHtml.innerHTML = "Gold: " + gold;
   maxLevelReached = true;
+  clockRunning = false;
+  clearInterval(timerRun);
+  counterPlus.innerHTML = "You completed game";
 }
 
-if (house == 10 && !houseAlertShown) {
-  alert("Congrats you completed Houses \n you don't need to construct House anymore");
-  gold += 20;
+if (house == 5 && !houseAlertShown) {
+  gold += 8;
   goldHtml.innerHTML = "Gold: " + gold;
   houseAlertShown = true;
 }
 
-if (factory == 10 && !factoryAlertShown) {
-  alert("Congrats you completed Factories \n you don't need to construct Factory anymore");
-  gold += 20;
+if (factory == 5 && !factoryAlertShown) {
+  gold += 100;
   goldHtml.innerHTML = "Gold: " + gold;
   factoryAlertShown = true;
 }
 
-if (hospital == 10 && !hospitalAlertShown) {
-  alert("Congrats you completed Hospitals \n you don't need to construct Hospital anymore");
-  gold += 20;
+if (hospital == 5 && !hospitalAlertShown) {
+  gold += 42;
   goldHtml.innerHTML = "Gold: " + gold;
   hospitalAlertShown = true;
 }
 
-if (school == 10 && !schoolAlertShown) {
-  alert("Congrats you completed Schools \n you don't need to construct School anymore");
-  gold += 20;
+if (school == 5 && !schoolAlertShown) {
+  gold += 34;
   goldHtml.innerHTML = "Gold: " + gold;
   schoolAlertShown = true;
 }
 
-if (university == 10 && !universityAlertShown) {
-  alert("Congrats you completed Universities \n you don't need to construct University anymore");
-  gold += 20;
+if (university == 5 && !universityAlertShown) {
+  gold += 33;
   goldHtml.innerHTML = "Gold: " + gold;
   universityAlertShown = true;
 }
 
-if (medicalSchool == 10 && !medicalSchoolAlertShown) {
-  alert("Congrats you completed Medical Schools \n you don't need to construct Medical School anymore");
-  gold += 20;
+if (medicalSchool == 5 && !medicalSchoolAlertShown) {
+  gold += 42;
   goldHtml.innerHTML = "Gold: " + gold;
   medicalSchoolAlertShown = true;
 }
@@ -151,14 +153,27 @@ if (medicalSchool == 10 && !medicalSchoolAlertShown) {
 }
 
 
+function biggestGoldIncrease() {
+  gold += 100;
+  goldHtml.innerHTML = "Gold: " + gold;
+}
+
+function bigGoldIncrease() {
+  gold += 50;
+  goldHtml.innerHTML = "Gold: " + gold;
+}
+
 function goldIncrease() {
     gold += 10;
     goldHtml.innerHTML = "Gold: " + gold;
     
 }
 
+let timerRun;
 
-setInterval(goldIncrease,10000);
+timerRun = setInterval(goldIncrease,10000);
+timerBigRun = setInterval(bigGoldIncrease,60000)
+timerBiggestRun = setInterval(biggestGoldIncrease,180000)
 
 function bet() {
     let userGuess = document.getElementById("roulette").value;
@@ -184,49 +199,50 @@ if (gold < 0) {
   window.location.href = "index.html";
 }
 
-function adsasd() {
-  let randomNumber = Math.floor(Math.random() * 12);
-  let anotherRandomNumber = Math.floor(Math.random() * 12);
-  let lastRandomNumber = Math.floor(Math.random() * 12);
-  let randomNumberWin = Math.floor(Math.random()*2)+1;
+let startTime = new Date().getTime();
 
-  let userGuess = document.getElementById("teamBet").value;
+  function startStopwatch() {
+  if (clockRunning == true) {
+    timerRun = setInterval(updateDisplay, 10);
+  } else {
+    clearInterval(timerRun);
+    const currentTime = new Date().getTime();
+    const elapsedTime = currentTime - startTime;
 
-  if (randomNumber == anotherRandomNumber) {
-    anotherRandomNumber == lastRandomNumber;
+    const hours = Math.floor(elapsedTime / 3600000);
+    const minutes = Math.floor((elapsedTime % 3600000) / 60000);
+    const seconds = Math.floor((elapsedTime % 60000) / 1000);
+    const milliseconds = elapsedTime % 1000;
+
+    const displayString = `${hours}:${padZero(minutes)}:${padZero(seconds)}.${padZeroMilliseconds(milliseconds)}`;
+    alert(`Congrats you finished the game in ${displayString}`);
   }
-  let firstIndex = teams[randomNumber];
-  let secondIndex = teams[anotherRandomNumber]
+}
+
+
+function updateDisplay() {
+  const currentTime = new Date().getTime();
+  const elapsedTime = currentTime - startTime;
   
-  let  whoWin = ;
+  const hours = Math.floor(elapsedTime / 3600000);
+  const minutes = Math.floor((elapsedTime % 3600000) / 60000);
+  const seconds = Math.floor((elapsedTime % 60000) / 1000);
+  const milliseconds = elapsedTime % 1000;
 
+  const displayString = `${hours}:${padZero(minutes)}:${padZero(seconds)}.${padZeroMilliseconds(milliseconds)}`;
+  document.getElementById('display').innerText = displayString;
+}
 
+function padZero(value) {
+  return value < 10 ? `0${value}` : value;
+}
 
-  firstTeam.value = firstIndex;
-  secondTeam.value = secondIndex;
-
-  firstTeam.innerHTML = firstIndex;
-  secondTeam.innerHTML = secondIndex;
-
-
-  console.log(firstIndex);
-  console.log(secondIndex);
-  console.log(whoWin);
-  console.log(userGuess);
-
-  if (whoWin == firstIndex && userGuess == firstIndex) {
-    winningTeam.innerHTML = "You" + win;
-    gold += 40;
-    goldHtml.innerHTML = "Gold: " + gold;
-  
-  }else if (whoWin == secondIndex && userGuess == secondIndex) {
-    winningTeam.innerHTML = "You: " + win;
-    gold += 40;
-    goldHtml.innerHTML = "Gold: " + gold;
-  }else {
-    winningTeam.innerHTML = "You: " + lose;
-    gold -= 20;
-    goldHtml.innerHTML = "Gold: " + gold;
+function padZeroMilliseconds(value) {
+  if (value < 10) {
+    return `00${value}`;
+  } else if (value < 100) {
+    return `0${value}`;
+  } else {
+    return value;
   }
-
 }

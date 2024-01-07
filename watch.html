@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body onload="startStopwatch()">
+  <h1>Stopwatch</h1>
+  <p id="display">0:00:00.000</p>
+
+  <script>
+    let startTime = new Date().getTime();
+
+    function startStopwatch() {
+      setInterval(updateDisplay, 10);
+    }
+
+    function updateDisplay() {
+      const currentTime = new Date().getTime();
+      const elapsedTime = currentTime - startTime;
+      
+      const hours = Math.floor(elapsedTime / 3600000);
+      const minutes = Math.floor((elapsedTime % 3600000) / 60000);
+      const seconds = Math.floor((elapsedTime % 60000) / 1000);
+      const milliseconds = elapsedTime % 1000;
+
+      const displayString = `${hours}:${padZero(minutes)}:${padZero(seconds)}.${padZeroMilliseconds(milliseconds)}`;
+      document.getElementById('display').innerText = displayString;
+    }
+
+    function padZero(value) {
+      return value < 10 ? `0${value}` : value;
+    }
+
+    function padZeroMilliseconds(value) {
+      if (value < 10) {
+        return `00${value}`;
+      } else if (value < 100) {
+        return `0${value}`;
+      } else {
+        return value;
+      }
+    }
+  </script>
+</body>
+</html>
